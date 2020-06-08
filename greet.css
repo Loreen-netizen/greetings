@@ -1,11 +1,10 @@
 /* ================================================BODY============================================================= */
 
-/* .container{
-    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-    font-size: x-large;
-    font-weight: 300;
+.container{
+    display: flex;
+    margin-top: 6em;
   
-} */
+}
 
 .inputTag{
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
@@ -18,8 +17,7 @@
     padding: 5%;
     margin: auto;
     border: 1px groove rgb(236, 234, 234);
-    display: flex;
-    justify-content: center;
+     flex : 2;
     background-color: rgb(223, 183, 195);
 }
 
@@ -34,19 +32,36 @@
 
 .buttonDiv{
     padding: 5%;
-    margin: auto;
+    margin-left: 1em;
     border: 1px groove rgb(238, 234, 234);
-    display: flex;
-    justify-content: center;
+     flex : 1;
     background-color: rgb(228, 215, 209);
 }
 
 
 /* ==================================MEDIA QUEIRIES================================================= */
 
-@media(max-width:800px){
-    body{
-     justify-content: left;
+@media(max-width:650px){
+    .container{
+      display: inline-block;
     }
 
 }
+
+@media(max-width:650px){
+    .inputDiv{
+        padding: 5px;
+        margin: auto;
+        border: 1px groove rgb(236, 234, 234);
+        background-color: rgb(223, 183, 195);
+    }
+}
+@media(max-width:650px){
+    .buttonDiv{
+        padding: 5%;
+        margin: auto;
+        border: none;
+        background-color: white;
+    }
+}
+
