@@ -1,0 +1,52 @@
+/* ================================================BODY============================================================= */
+
+/* .container{
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: x-large;
+    font-weight: 300;
+  
+} */
+
+.inputTag{
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: x-large;
+    font-weight: 300;
+    
+}
+
+.inputDiv{
+    padding: 5%;
+    margin: auto;
+    border: 1px groove rgb(236, 234, 234);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(223, 183, 195);
+}
+
+
+.buttonTag{
+    
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: x-large;
+    font-weight: 300;
+   
+}
+
+.buttonDiv{
+    padding: 5%;
+    margin: auto;
+    border: 1px groove rgb(238, 234, 234);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(228, 215, 209);
+}
+
+
+/* ==================================MEDIA QUEIRIES================================================= */
+
+@media(max-width:800px){
+    body{
+     justify-content: left;
+    }
+
+}
