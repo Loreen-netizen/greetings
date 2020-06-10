@@ -1,9 +1,15 @@
+var theName = document.getElementById("theInputTag")
+var greetbtn =  document.getElementById("greetbtn");
+var greetLabel = document.createElement("label")
+var parentContainer = document.getElementsByClassName("container");
 var greetBtnClicked = function(){
+var containerDiv = document.createElement("containerDiv")
+containerDiv.className = "greetLabelDiv"
+greetLabel.id = "theGreetLabel"
+greetLabel.innerHTML = ("Hello " + theName.value);
+containerDiv.appendChild(greetLabel);
+// document.parentContainer.appendChild(containerDiv);
 
-    var theName = document.getElementById("theInputTag")
-  var greetbtn =  document.getElementById("greetbtn");
-
-
- alert("Hello " + theInputTag.value);
+document.body.appendChild(containerDiv);
 }
 greetbtn.addEventListener("click", greetBtnClicked)

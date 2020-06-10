@@ -1,6 +1,6 @@
 /* ================================================BODY============================================================= */
 
-.container{
+body{
     display: flex;
     margin-top: 6em;
   
@@ -15,19 +15,31 @@
 
 .inputDiv{
     padding: 5%;
-    margin: auto;
+    margin-right: 1em;
     border: 1px groove rgb(236, 234, 234);
      flex : 2;
     background-color: rgb(223, 183, 195);
 }
 
 
-.buttonTag{
+#greetbtn{
     
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
     font-size: x-large;
     font-weight: 300;
    
+}
+
+.greetLabelDiv{
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: x-large;
+    font-weight: 300;
+    padding: 5%;
+    border: 1px groove rgb(236, 234, 234);
+    background-color: rgb(223, 183, 195);
+    margin-left: 1em;
+    
+    
 }
 
 .buttonDiv{
@@ -42,7 +54,7 @@
 /* ==================================MEDIA QUEIRIES================================================= */
 
 @media(max-width:650px){
-    .container{
+    body{
       display: inline-block;
     }
 
@@ -64,4 +76,30 @@
         background-color: white;
     }
 }
+
+@media(max-width:655px){
+    .greetLabelDiv{ 
+        font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+        font-size: x-large;
+        font-weight: 300;
+        padding: 0;
+        border: 1px groove rgb(236, 234, 234);
+        background-color: rgb(252, 252, 252);
+       
+
+        
+    }
+}
+
+/* @media(max-width:830px){
+    #greetbtn{
+    
+        font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+        font-size: x-large;
+        font-weight: 300;
+        padding: 0;
+        margin-left: 30%;
+       
+    }
+} */
 
