@@ -1,28 +1,48 @@
 var theName = document.getElementById("theInputTag")
 var greetbtn = document.getElementById("greetbtn");
-var greetLabel = document.createElement("label")
-var counterLabel = document.createElement("label")
+var greetLabel = document.getElementById("theGreetLabel")
+var counterLabel = document.getElementById("counterLabel")
 var parentContainer = document.getElementsByClassName("container");
-var namesArray = [];
+var theNamesArray = [];
+var counter= 0;
 
-var greetBtnClicked = function () {
+var pageRefreshedCount = function(){
+  if (JSON.parse(localStorage.getItem("totalPeopleGreeted"))=== null){
+     counter = 0;
+  }
+  else 
 
-  var containerDiv = document.createElement("containerDiv")
-  containerDiv.className = "greetLabelDiv"
-  greetLabel.id = "theGreetLabel"
-  greetLabel.innerHTML = ("Hello " + theName.value);
-  containerDiv.appendChild(greetLabel);
-  document.body.appendChild(containerDiv);
+  {
+     counter = JSON.parse(localStorage.getItem("totalPeopleGreeted"))
+}
 }
 
-var counter = function(){
-  
-  var secondContainerDiv = document.createElement("secondContainerDiv")
-  secondContainerDiv.className = "greetLabelDiv"
-  counterLabel.innerHTML = (namesArray.length);
-  secondContainerDiv.appendChild(counterLabel);
-  document.body.appendChild(secondContainerDiv);
+var pageRefreshedNames = function(){
+  if (JSON.parse(localStorage.getItem("namesArray")) === null){
+    theNamesArray = []
+  }
+  else{
+    theNamesArray = JSON.parse(localStorage.getItem("namesArray"))
+  }
+}
 
+var greetBtnClicked = function () {
+  if(theName.value === ""){
+    return
+  } 
+ else{greetLabel.innerHTML = ("Hello " + theName.value);
+}
+
+}
+
+var namesCounter = function(){
+  if(theName.value === ""){
+    return
+  } 
+  else{ counter++
+    
+    return counterLabel.innerHTML = ("total people greeted = " + counter);
+  }
 }
 
 var clearGreetInput = function () {
@@ -34,13 +54,16 @@ var storeNames = function () {
   let allNames = {
     "name": theName.value,
   }
-  namesArray.push(allNames);
-}
+  theNamesArray.push(allNames);
 
-localStorage.setItem("namesArray", JSON.stringify(namesArray));
+localStorage.setItem("namesArray", JSON.stringify(theNamesArray));
+localStorage.setItem("totalPeopleGreeted", JSON.stringify(counter));
+};
 
-
+greetbtn.addEventListener("click", pageRefreshedCount)
+greetbtn.addEventListener("click", pageRefreshedNames)
 greetbtn.addEventListener("click", greetBtnClicked);
+greetbtn.addEventListener("click", namesCounter);
 greetbtn.addEventListener("click", storeNames);
-greetbtn.addEventListener("click", counter);
+
 greetbtn.addEventListener("click", clearGreetInput);
