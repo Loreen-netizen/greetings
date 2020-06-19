@@ -1,3 +1,4 @@
+
 var theName = document.getElementById("theInputTag")
 var greetbtn = document.getElementById("greetbtn");
 var greetLabel = document.getElementById("theGreetLabel")
@@ -9,6 +10,45 @@ var resetCounter = document.getElementById("resetCounterButton")
 var theNamesArray = [];
 var counter = 0;
 var languageChosen = "";
+
+
+
+var validateUserInput = function(){
+
+  if (JSON.parse(localStorage.getItem("namesArray")) === null) {
+    resetCounter.addEventListener("click", resetTheCounter);
+    greetbtn.addEventListener("click", pageRefreshedCount);
+    greetbtn.addEventListener("click", pageRefreshedNames);
+    greetbtn.addEventListener("click", theLanguageChosen);
+    greetbtn.addEventListener("click", greetBtnClicked);
+    greetbtn.addEventListener("click", namesCounter);
+    greetbtn.addEventListener("click", storeNames);
+    greetbtn.addEventListener("click", clearGreetInput);
+  }
+
+  else if (JSON.parse(localStorage.getItem("namesArray"))!= null){
+  var userName = theName.value
+  var allNamesArray = JSON.parse(localStorage.getItem("namesArray"));
+  RegExp = /^userName$/i;
+  for(let i = 0; i < allNamesArray.length; i++)
+  if (RegExp.test(allNamesArray[i]))
+  {
+    resetCounter.addEventListener("click", resetTheCounter);
+    greetbtn.addEventListener("click", pageRefreshedCount);
+    greetbtn.addEventListener("click", pageRefreshedNames);
+    greetbtn.addEventListener("click", theLanguageChosen);
+    greetbtn.addEventListener("click", greetBtnClicked);
+    greetbtn.addEventListener("click", namesCounter);
+    greetbtn.addEventListener("click", storeNames);
+    greetbtn.addEventListener("click", clearGreetInput);
+    
+  }
+}
+  else{
+    greetLabel.innerHTML = ( "sorry you have already been greeted");
+   
+  }
+}
 
 
 
@@ -95,12 +135,8 @@ var resetTheCounter = function () {
   return counterLabel.innerHTML = ("total people greeted = " + counter);
 };
 
-greetbtn.addEventListener("click", pageRefreshedCount);
-greetbtn.addEventListener("click", pageRefreshedNames);
-greetbtn.addEventListener("click", theLanguageChosen);
-greetbtn.addEventListener("click", greetBtnClicked);
-greetbtn.addEventListener("click", namesCounter);
-greetbtn.addEventListener("click", storeNames);
-greetbtn.addEventListener("click", clearGreetInput);
-resetCounter.addEventListener("click", resetTheCounter);
+
+
+greetbtn.addEventListener("click", validateUserInput);
+
   // resetCounter.addEventListener("click", namesCounter);
