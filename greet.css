@@ -1,6 +1,6 @@
 /* ================================================BODY============================================================= */
 
-body{
+.container1{
     display: flex;
     margin-top: 6em;
   
@@ -46,11 +46,40 @@ body{
     background-color: rgb(228, 215, 209);   
 }
 
+.languageDivs{
+    display: flex;
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: x-large;
+    font-weight: 300;
+}
+
+.languageLabels{
+/* flex-basis: 100%; */
+margin: auto;
+padding: 3em;
+border: groove 0 rgb(238, 228, 219);
+}
+.resetCounterDiv{
+    padding: 3em;
+    display: flex;
+
+}
+
+.resetCounter{
+
+    margin: auto;
+padding: 3em;
+border: groove 0 rgb(238, 228, 219);
+font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: large;
+    font-weight: 300;
+}
+
 
 /* ==================================MEDIA QUEIRIES================================================= */
 
 @media(max-width:650px){
-    body{
+    .container1{
       display: inline-block;
     }
 
@@ -108,3 +137,42 @@ body{
     }
 } */
 
+@media(max-width:650px){
+
+.languageDivs{
+    padding-top: 0.2em;
+    flex-direction: column;
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size: x-large;
+    font-weight: 300;
+
+}
+}
+@media(max-width:650px){
+    
+    .languageLabels{
+    margin: 0;
+    padding: 0.5em;
+    border: groove 0 rgb(238, 228, 219);
+    }
+    
+    }
+
+    @media(max-width:650px){
+    .resetCounterDiv{
+        padding: 0;
+        display: inline-block;
+    
+    }
+}
+@media(max-width:650px){
+    .resetCounter{
+    
+        margin: auto;
+    padding: 1em;
+    border: groove 0 rgb(238, 228, 219);
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+        font-size: large;
+        font-weight: 300;
+    }
+}
