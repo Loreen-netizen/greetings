@@ -65,16 +65,27 @@ var verifyNames = function(){
     }
     else if(namesInArray != null)
     {
+      var nameExist = undefined;
       for(let i=0; i < namesInArray.length ; i++)
       {
-       if (theName.value === namesInArray[i]) 
-       { 
-         return;
-       }else
-        {
-           namesCounter() 
+        var eachName = Object.values(namesInArray[i]).toString() ;
+        var userInput = theName.value;
+        if (userInput.toUpperCase() === eachName.toUpperCase()) 
+        { 
+          nameExist = true;
+          return;
         }
+        else 
+        {
+          nameExist = false;
+          continue;
+        }
+        
       } 
+
+      if (nameExist === false){
+        namesCounter()
+      }
     }
 }
 
