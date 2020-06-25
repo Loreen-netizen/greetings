@@ -58,6 +58,26 @@ var greetBtnClicked = function () {
 
 }
 
+var verifyNames = function(){
+   var namesInArray = JSON.parse(localStorage.getItem("namesArray"));
+    if (namesInArray === null) { 
+      namesCounter();
+    }
+    else if(namesInArray != null)
+    {
+      for(let i=0; i < namesInArray.length ; i++)
+      {
+       if (theName.value === namesInArray[i]) 
+       { 
+         return;
+       }else
+        {
+           namesCounter() 
+        }
+      } 
+    }
+}
+
 var namesCounter = function () {
   if (theName.value === "") {
     return
@@ -99,7 +119,8 @@ greetbtn.addEventListener("click", pageRefreshedCount);
 greetbtn.addEventListener("click", pageRefreshedNames);
 greetbtn.addEventListener("click", theLanguageChosen);
 greetbtn.addEventListener("click", greetBtnClicked);
-greetbtn.addEventListener("click", namesCounter);
+greetbtn.addEventListener("click",verifyNames);
+// greetbtn.addEventListener("click", namesCounter);
 greetbtn.addEventListener("click", storeNames);
 greetbtn.addEventListener("click", clearGreetInput);
 resetCounter.addEventListener("click", resetTheCounter);
