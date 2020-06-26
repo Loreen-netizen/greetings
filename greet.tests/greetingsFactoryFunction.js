@@ -31,8 +31,16 @@ if (language === "English"){
     return ("Hello ")
 }
 }
-var counterFunction = function(){
-
+var verifyFunction = function(array){
+ var name = "Rose";
+    for(let i = 0; i < array.length; i++){
+       if( array[i] === name){
+           return "you have already been counted"
+       }
+       else{
+           continue
+       }
+    }
 
 }
 
@@ -50,7 +58,7 @@ var counterFunction = function(){
         greet,
         numberOfPeopleGreeted,
         greetLanguage,
-        counterFunction,
+        verifyFunction,
         theNamesArray,
     }
 }
