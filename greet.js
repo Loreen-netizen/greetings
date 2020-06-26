@@ -46,15 +46,22 @@ var greetBtnClicked = function () {
   if (theName.value === "") {
     return
   }
+  if (languageChosen === ""){
+    greetLabel.innerHTML = ("Please select your language")
+  }
   if (languageChosen === "Shona") {
     greetLabel.innerHTML = ("Hesi Kani " + theName.value);
+    verifyNames();
   }
   if (languageChosen === "Ndebele") {
     greetLabel.innerHTML = ("Sawubona " + theName.value);
+    verifyNames();
   }
   if (languageChosen === "English") {
     greetLabel.innerHTML = ("Hello " + theName.value);
+    verifyNames();
   }
+  
 
 }
 
@@ -62,6 +69,7 @@ var verifyNames = function(){
    var namesInArray = JSON.parse(localStorage.getItem("namesArray"));
     if (namesInArray === null) { 
       namesCounter();
+      storeNames();
     }
     else if(namesInArray != null)
     {
@@ -84,7 +92,8 @@ var verifyNames = function(){
       } 
 
       if (nameExist === false){
-        namesCounter()
+        namesCounter();
+        storeNames();
       }
     }
 }
@@ -130,9 +139,9 @@ greetbtn.addEventListener("click", pageRefreshedCount);
 greetbtn.addEventListener("click", pageRefreshedNames);
 greetbtn.addEventListener("click", theLanguageChosen);
 greetbtn.addEventListener("click", greetBtnClicked);
-greetbtn.addEventListener("click",verifyNames);
+// greetbtn.addEventListener("click",verifyNames);
 // greetbtn.addEventListener("click", namesCounter);
-greetbtn.addEventListener("click", storeNames);
+// greetbtn.addEventListener("click", storeNames);
 greetbtn.addEventListener("click", clearGreetInput);
 resetCounter.addEventListener("click", resetTheCounter);
   // resetCounter.addEventListener("click", namesCounter);
