@@ -2,10 +2,15 @@ var greetingsFactoryFunction = function(){
 
     var counter = 0;
     var language = "";
-
+    var namesAdded = [];
     var greet = function(name){
+        namesAdded.push(name);
         return ("Hello " + name)
     };
+
+    var theNamesArray = function(){
+        return namesAdded;
+    }
 
     var numberOfPeopleGreeted = function(){
        if (greet() != "") {
@@ -26,6 +31,10 @@ if (language === "English"){
     return ("Hello ")
 }
 }
+var counterFunction = function(){
+
+
+}
 
 
 
@@ -41,5 +50,7 @@ if (language === "English"){
         greet,
         numberOfPeopleGreeted,
         greetLanguage,
+        counterFunction,
+        theNamesArray,
     }
 }

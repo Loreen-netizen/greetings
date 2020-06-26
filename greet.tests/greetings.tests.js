@@ -14,6 +14,13 @@ describe("greetingsFactoryFunction", function(){
         assert.equal(1, greetFactoryFunction2.numberOfPeopleGreeted())
         });
 
+     it ("should PUSH greeted name into an array", function(){
+
+            var greetFactoryFunction6 = greetingsFactoryFunction();
+            greetFactoryFunction6.greet("Hlosani");
+            assert.deepEqual(["Hlosani"], greetFactoryFunction6.theNamesArray())
+            });
+
 
      it ("should return 3 when 3 people are greeted", function(){
 
@@ -33,7 +40,12 @@ describe("greetingsFactoryFunction", function(){
             assert.equal("Sawubona " , greetFactoryFunction4.greetLanguage("Ndebele"))
             });
 
-    
+            // it ("should not count the same person twice", function(){
+
+            //     var greetFactoryFunction5 = greetingsFactoryFunction();
+            //     greetFactoryFunction5.greet("Loreen");
+            //     assert.equal(3, greetFactoryFunction5.counterFunction("Loreen"))
+            //     }); 
 
 
 
