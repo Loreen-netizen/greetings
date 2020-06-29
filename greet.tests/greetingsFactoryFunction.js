@@ -125,7 +125,6 @@ else{
         namesCounter,
         greetLanguage,
         verifyFunction,
-        // theNamesArray,
         storeNames,
         clearGreetInput,
         getNames,

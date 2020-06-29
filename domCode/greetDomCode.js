@@ -8,14 +8,14 @@ var resetCounter = document.getElementById("resetCounterButton");
 
 var greetingsFunctionInstance = greetingsFactoryFunction();
 
-greetbtn.onclick = function() {
+greetbtn.onclick = function(){
 
   greetingsFunctionInstance.clearGreetInput();
   greetingsFunctionInstance.verifyNames();
   greetingsFunctionInstance.pageRefreshedCount();
   greetingsFunctionInstance.pageRefreshedNames();
   greetingsFunctionInstance.theLanguageChosen();
-  greetingsFunctionInstance.errorMessageUserName();
+  greetingsFactoryFunction.errorMessageUserName();
 }
 
 var pageRefreshedCount = function () {
