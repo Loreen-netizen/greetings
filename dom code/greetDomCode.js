@@ -11,6 +11,7 @@ var greetingsFunctionInstance = greetingsFactoryFunction();
 greetbtn.onclick = function(){
 
   greetingsFunctionInstance.clearGreetInput();
+  greetingsFunctionInstance.verifyNames();
   greetingsFunctionInstance.pageRefreshedCount();
   greetingsFunctionInstance.pageRefreshedNames();
   greetingsFunctionInstance.theLanguageChosen();

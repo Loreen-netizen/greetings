@@ -39,14 +39,40 @@ describe("greetingsFactoryFunction", function () {
     it("should PUSH greeted name into an array", function () {
 
         var greetFactoryFunction6 = greetingsFactoryFunction();
-        assert.deepEqual(["Hlosani"], greetFactoryFunction6.storeNames("Hlosani"))
+        assert.deepEqual([ {"name" : "Hlosani"} ], greetFactoryFunction6.storeNames("Hlosani"))
     });
 
-    // it("should clear input text when greet button is clicked", function(){
-    //     var greetFactoryFunction7 = greetingsFactoryFunction();
-    //     assert.equal("", greetFactoryFunction7.clearGreetInput("Yeukai"))
+    it("should clear input text when greet button is clicked", function(){
+        var greetFactoryFunction7 = greetingsFactoryFunction();
+        assert.equal("", greetFactoryFunction7.clearGreetInput("Yeukai"))
         
 
-    // });
+    });
+
+    it("should be able to get names from local storage", function(){
+        var greetFactoryFunction8 = greetingsFactoryFunction();
+        var storedNames = greetFactoryFunction8.storeNames("Pete")
+        assert.deepEqual([ { name: 'Pete' } ], greetFactoryFunction8.getNames(storedNames))
+        
+
+    });
+
+    it("should return error message when language isnt selected", function(){
+        var greetFactoryFunction9 = greetingsFactoryFunction();
+        
+        assert.equal("Please select your language", greetFactoryFunction9.errorMessageLanguage(""))
+        
+
+    });
+    
+
+    it("should return error message when user name has not been entered", function(){
+        var greetFactoryFunction10 = greetingsFactoryFunction();
+        
+        assert.equal("Please enter userName", greetFactoryFunction10.errorMessageUserName(""))
+        
+
+    });
+    
 
 });
