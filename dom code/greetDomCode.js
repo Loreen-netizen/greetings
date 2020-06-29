@@ -6,14 +6,15 @@ var parentContainer = document.getElementsByClassName("container");
 var languageLabels = document.getElementsByName("language");
 var resetCounter = document.getElementById("resetCounterButton");
 
+var greetingsFunctionInstance = greetingsFactoryFunction();
 
+greetbtn.onclick = function(){
 
-var theNamesArray = [];
-var counter = 0;
-var languageChosen = "";
-
-
-
+  greetingsFunctionInstance.clearGreetInput();
+  greetingsFunctionInstance.pageRefreshedCount();
+  greetingsFunctionInstance.pageRefreshedNames();
+  greetingsFunctionInstance.theLanguageChosen();
+}
 
 var pageRefreshedCount = function () {
   if (JSON.parse(localStorage.getItem("totalPeopleGreeted")) === null) {
@@ -43,34 +44,11 @@ var theLanguageChosen = function () {
   }
 }
 
-var greetBtnClicked = function () {
-  if (theName.value === "") {
-    return
-  }
-  if (languageChosen === "") {
-    greetLabel.innerHTML = ("Please select your language")
-  }
-  if (languageChosen === "Shona") {
-    greetLabel.innerHTML = ("Hesi Kani " + theName.value);
-    verifyNames();
-  }
-  if (languageChosen === "Ndebele") {
-    greetLabel.innerHTML = ("Sawubona " + theName.value);
-    verifyNames();
-  }
-  if (languageChosen === "English") {
-    greetLabel.innerHTML = ("Hello " + theName.value);
-    verifyNames();
-  }
-
-
-}
-
 var verifyNames = function () {
   var namesInArray = JSON.parse(localStorage.getItem("namesArray"));
   if (namesInArray === null) {
-    namesCounter();
-    storeNames();
+    greetingsFunctionInstance.namesCounter();
+    greetingsFunctionInstance.storeNames();
   }
   else if (namesInArray != null) {
     var nameExist = undefined;
@@ -89,37 +67,12 @@ var verifyNames = function () {
     }
 
     if (nameExist === false) {
-      namesCounter();
-      storeNames();
+      greetingsFunctionInstance.namesCounter();
+      greetingsFunctionInstance.storeNames();
     }
   }
 }
 
-var namesCounter = function () {
-  if (theName.value === "") {
-    return
-  }
-  else {
-    counter++
-
-    return counterLabel.innerHTML = ("total people greeted = " + counter);
-  }
-}
-
-var clearGreetInput = function () {
-  theName.value = "";
-}
-
-var storeNames = function () {
-
-  let allNames = {
-    "name": theName.value,
-  }
-  theNamesArray.push(allNames);
-
-  localStorage.setItem("namesArray", JSON.stringify(theNamesArray));
-  localStorage.setItem("totalPeopleGreeted", JSON.stringify(counter));
-};
 
 var resetTheCounter = function () {
   localStorage.removeItem("totalPeopleGreeted");
@@ -146,10 +99,9 @@ window.onload = function () {
   else { counterLabel.innerHTML = "counter" }
 };
 
-greetbtn.addEventListener("click", pageRefreshedCount);
-greetbtn.addEventListener("click", pageRefreshedNames);
-greetbtn.addEventListener("click", theLanguageChosen);
-greetbtn.addEventListener("click", greetBtnClicked);
+// greetbtn.addEventListener("click", pageRefreshedCount);
+// greetbtn.addEventListener("click", pageRefreshedNames);
+// greetbtn.addEventListener("click", theLanguageChosen);
 greetbtn.addEventListener("click", clearGreetInput);
 resetCounter.addEventListener("click", resetTheCounter);
 resetCounter.addEventListener("click", clearLocalStorage);

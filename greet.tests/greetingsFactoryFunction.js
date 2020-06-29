@@ -3,21 +3,51 @@ var greetingsFactoryFunction = function(){
     var counter = 0;
     var language = "";
     var namesAdded = [];
-    var greet = function(name){
-        namesAdded.push(name);
-        return ("Hello " + name)
-    };
+    var userName = "";
 
-    var theNamesArray = function(){
-        return namesAdded;
-    }
+    
+    var greetBtnClicked = function (name, language) {
+       userName = name;
+       language = language;
+       
+        if (userName === "") {
+          return
+        }
+        if (language === "") {
+         return ("Please select your language")
+        }
+        if (language === "Shona") {
+          return ("Hesi Kani " + userName);
+          verifyNames();
+        }
+        if (language === "Ndebele") {
+         return ("Sawubona " + userName);
+          verifyNames();
+        }
+        if (language=== "English") {
+          return ("Hello " + userName);
+          verifyNames();
+        }
+      
+      
+      }
 
-    var numberOfPeopleGreeted = function(){
-       if (greet() != "") {
-           counter++
-       }
-      return counter;
-    }
+      var clearGreetInput = function (name) {
+          userName = name;
+        userName = "";
+      }
+
+    var namesCounter = function (namesEntered) {
+       for(let i = 0; i < namesEntered.length; i++)
+        if (namesEntered[i] === "") {
+          return
+        }
+        else {
+          counter++
+          
+        }
+        return  ("total people greeted = " + counter);
+      }
  
 var greetLanguage = function(theLanguage){
    language = theLanguage;
@@ -44,6 +74,18 @@ var verifyFunction = function(array){
 
 }
 
+var storeNames = function () {
+
+    let allNames = {
+      "name": userName,
+    }
+    namesAdded.push(allNames);
+  
+    localStorage.setItem("namesArray", JSON.stringify(namesAdded));
+    localStorage.setItem("totalPeopleGreeted", JSON.stringify(counter));
+  };
+  
+
 
 
 
@@ -55,10 +97,12 @@ var verifyFunction = function(array){
 
     return{
 
-        greet,
-        numberOfPeopleGreeted,
+        greetBtnClicked,
+        namesCounter,
         greetLanguage,
         verifyFunction,
-        theNamesArray,
+        // theNamesArray,
+        storeNames,
+        clearGreetInput,
     }
 }
