@@ -4,13 +4,13 @@ describe("greetingsFactoryFunction", function () {
 
         var greetFactoryFunction = greetingsFactoryFunction();
 
-        assert.equal("Hesi Kani Yeukai", greetFactoryFunction.greetBtnClicked("Yeukai", "Shona"))
+        assert.equal("Hello Yeukai", greetFactoryFunction.greet("Yeukai"))
     });
 
     it("should return 1 when one person is greeted", function () {
 
         var greetFactoryFunction2 = greetingsFactoryFunction();
-        assert.equal("total people greeted = 1", greetFactoryFunction2.namesCounter(["yeu"]))
+        assert.equal(1, greetFactoryFunction2.numberOfPeopleGreeted(["yeu"]))
     });
 
 
