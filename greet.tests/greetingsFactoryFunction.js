@@ -57,15 +57,15 @@ else{
     }
 
     var namesCounter = function (namesEntered) {
-        for (let i = 0; i < namesEntered.length; i++)
-            if (namesEntered[i] === "") {
-                return
-            }
-            else {
-                counter++
-                // errorMessageLanguage
-            }
-        return ("total people greeted = " + counter);
+        var theName = namesEntered;
+        if (theName.value === "") {
+            return
+          }
+          else {
+            counter++
+        
+            return  ("total people greeted = " + counter);
+          };
     }
 
     var greetLanguage = function (theLanguage) {

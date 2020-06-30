@@ -14,11 +14,11 @@ describe("greetingsFactoryFunction", function () {
     });
 
 
-    it("should return 3 when 3 people are greeted", function () {
+    // it("should return 3 when 3 people are greeted", function () {
 
-        var greetFactoryFunction3 = greetingsFactoryFunction();
-        assert.equal("total people greeted = 3", greetFactoryFunction3.namesCounter(["Hlosani", "Prudence", "Joseph"]))
-    });
+    //     var greetFactoryFunction3 = greetingsFactoryFunction();
+    //     assert.equal("total people greeted = 3", greetFactoryFunction3.namesCounter(["Hlosani", "Prudence", "Joseph"]))
+    // });
 
     it("should greet people in 3 different languages", function () {
 
