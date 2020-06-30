@@ -81,14 +81,8 @@ var greetingsFactoryFunction = function () {
         if (language === "") {
             return "Please select language"
         }
-        else if (language === "Shona") {
-            return ("Hesi Kani ")
-        }
-        else if (language === "Ndebele") {
-            return ("Sawubona ")
-        }
-        else if (language === "English") {
-            return ("Hello ")
+        else {
+            return
         }
     };
 
