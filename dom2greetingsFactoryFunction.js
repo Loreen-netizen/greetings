@@ -11,7 +11,6 @@ var greetingsFactoryFunction = function () {
             namesGreeted.push(name);
 
         }
-        else { return "you have already been greeted"}
 
     };
     var greetLanguage = function (language, name) {
@@ -27,30 +26,11 @@ var greetingsFactoryFunction = function () {
         }
     }
 
-    var getName = function(){
-        console.log(namesGreeted);
-return namesGreeted
+    var getName = function(){  
+    return namesGreeted
 
     };
 
-    // var verifyFunction = function (array) {
-    //     var name = "Rose";
-    //     for (let i = 0; i < array.length; i++) {
-    //         if (array[i] === name) {
-    //             return "you have already been counted"
-    //         }
-    //         else {
-    //             continue
-    //         }
-    //     }
-
-    // }
-
-    // var clearGreetInput = function (name) {
-    //     tName = name;
-    //     return tName = "";
-
-    // }
 
     var errorMessageLanguage = function (language) {
         if (language === undefined){
@@ -75,11 +55,7 @@ return namesGreeted
       
         numberOfPeopleGreeted,
         greetLanguage,
-        storeNames,
-        // verifyFunction,
-        // theNamesArray,
         verifyNames,
-        clearGreetInput,
         errorMessageLanguage,
         errorMessageUserName,
         getName ,

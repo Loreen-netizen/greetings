@@ -8,31 +8,12 @@ var resetCounter = document.getElementById("resetCounterButton");
 var languageChosen = "";
 var greetingsFunctionInstance = greetingsFactoryFunction();
 
-var pageRefreshedCount = function () {
-  if (JSON.parse(localStorage.getItem("totalPeopleGreeted")) === null) {
-    counter = 0;
-  }
-  else {
-    counter = JSON.parse(localStorage.getItem("totalPeopleGreeted"))
-  }
-}
-
-var pageRefreshedNames = function () {
-  if (JSON.parse(localStorage.getItem("namesArray")) === null) {
-    theNamesArray = []
-  }
-  else {
-    theNamesArray = JSON.parse(localStorage.getItem("namesArray"))
-  }
-}
-
 var theLanguageChosen = function(){
   let languageArray = Array.from(languageLabels);
   for (let i = 0; i < languageArray.length; i++) {
     if (languageArray[i].checked) {
        languageChosen = languageArray[i].value;
       greetBtnClicked(languageChosen);
-      // greetingsFunctionInstance.greetLanguage(String(languageChosen), String(theName.value));
       return languageChosen;
     }
     else{
@@ -45,7 +26,7 @@ var theLanguageChosen = function(){
 
 var greetBtnClicked = function () {
 
-  if (languageChosen === undefined) {
+  if (languageChosen === undefined || languageChosen === "") {
     greetLabel.innerHTML = greetingsFunctionInstance.errorMessageLanguage()
   }
   else {
@@ -56,8 +37,6 @@ var greetBtnClicked = function () {
 };
 greetbtn.onclick = function () {
   storeNames();
-  pageRefreshedCount();
-  pageRefreshedNames();
   theLanguageChosen();
   greetBtnClicked();
   clearGreetInput();
@@ -65,48 +44,9 @@ greetbtn.onclick = function () {
 
 }
 
-
-
-// var verifyNames = function () {
-//   var namesInArray = JSON.parse(localStorage.getItem("namesArray"));
-//   if (namesInArray === null) {
-//     namesCounter();
-//     storeNames();
-//   }
-//   else if (namesInArray != null) {
-//     var nameExist = undefined;
-//     for (let i = 0; i < namesInArray.length; i++) {
-//       var eachName = Object.values(namesInArray[i]).toString();
-//       var userInput = theName.value;
-//       if (userInput.toUpperCase() === eachName.toUpperCase()) {
-//         nameExist = true;
-//         return;
-//       }
-//       else {
-//         nameExist = false;
-//         continue;
-//       }
-
-//     }
-
-//     if (nameExist === false) {
-//       namesCounter();
-//       storeNames();
-//     }
-//   }
-// }
-
 var namesCounter = function () {
   var numberOfGreetings = greetingsFunctionInstance.numberOfPeopleGreeted();
   counterLabel.innerHTML = ("Total people greeted = " + numberOfGreetings);
-  // if (theName.value === "") {
-  //   return
-  // }
-  // else {
-  //   counter++
-
-  //   return counterLabel.innerHTML = ("total people greeted = " + counter);
-  // }
 }
 
 var clearGreetInput = function () {
@@ -115,28 +55,24 @@ var clearGreetInput = function () {
 
 var storeNames = function () {
 
-  // let allNames = {
-  //   "name": theName.value,
-  // }
-  // theNamesArray.push(allNames);
-
-  localStorage.setItem("namesArray", JSON.stringify(greetingsFunctionInstance.getName()));
-  localStorage.setItem("totalPeopleGreeted", JSON.stringify(greetingsFunctionInstance.numberOfPeopleGreeted()));
+  localStorage.setItem("namesGreeted", JSON.stringify(greetingsFunctionInstance.getName()));
+  localStorage.setItem("numberOfPeopleGreeted", JSON.stringify(greetingsFunctionInstance.numberOfPeopleGreeted()));
 };
 
 var resetTheCounter = function () {
-  localStorage.removeItem("totalPeopleGreeted");
-  if (JSON.parse(localStorage.getItem("totalPeopleGreeted")) === null) {
+  localStorage.removeItem("namesGreeted");
+  var counter = greetingsFunctionInstance.numberOfPeopleGreeted()
+  if (JSON.parse(localStorage.getItem("namesGreeted")) === null) {
     counter = 0;
   }
   else {
-    counter = JSON.parse(localStorage.getItem("totalPeopleGreeted"))
+    counter = JSON.parse(localStorage.getItem("namesGreeted"))
   }
   return counterLabel.innerHTML = ("total people greeted = " + counter);
 };
 
 var clearLocalStorage = function () {
-  localStorage.removeItem("namesArray");
+  localStorage.removeItem("numberOfPeopleGreeted");
   greetLabel.innerHTML = ("welcome!");
 
 }
