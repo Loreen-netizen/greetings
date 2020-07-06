@@ -3,20 +3,32 @@ var greetingsFactoryFunction = function () {
     var greetingsCounter = 0;
     var language = undefined;
     var namesGreeted = [];
-    var tName = "";
+    var theName = "";
 
-   
-    var verifyNames = function (name) {
-        if (!namesGreeted.includes(name)) {
-            namesGreeted.push(name);
+
+    var verifyNames = function (name,namesArray) {
+        theName = name.toUpperCase();
+        if (namesArray.includes(theName)) {
+            alreadyGreeted();
+        }
+        else{
+            namesGreeted.push(theName);
+            numberOfPeopleGreeted(namesGreeted);
+        }
+
+    };
+
+    var alreadyGreeted = function(theName,getNames) {
+        if (getNames.includes(theName.toUpperCase())) {
+            return "you have already been greeted"
 
         }
 
     };
     var greetLanguage = function (language, name) {
-        
+
         if (language === "Shona") {
-            return ("Hesi Kani "+ name)
+            return ("Hesi Kani " + name)
         }
         if (language === "Ndebele") {
             return ("Sawubona " + name)
@@ -26,18 +38,22 @@ var greetingsFactoryFunction = function () {
         }
     }
 
-    var getName = function(){  
-    return namesGreeted
+
+    var errorMessageLanguage = function (language) {
+        if (language === undefined) {
+            return "Please select language"
+        }
 
     };
 
 
-    var errorMessageLanguage = function (language) {
-        if (language === undefined){
-           return "Please select language"
-          }
-         
-        };
+    var getName = function () {
+        return namesGreeted
+
+    };
+
+
+
 
     var errorMessageUserName = function (name) {
         tName = name;
@@ -52,12 +68,13 @@ var greetingsFactoryFunction = function () {
 
     return {
 
-      
+
         numberOfPeopleGreeted,
         greetLanguage,
         verifyNames,
         errorMessageLanguage,
         errorMessageUserName,
-        getName ,
+        getName,
+        alreadyGreeted ,
     }
 };

@@ -8,6 +8,28 @@ var resetCounter = document.getElementById("resetCounterButton");
 var languageChosen = "";
 var greetingsFunctionInstance = greetingsFactoryFunction();
 
+
+var pageRefreshedCount = function () {
+  var getNames =JSON.parse(localStorage.getItem("namesGreeted"));
+  if( Array.from(getNames) === null) {
+    greetingsFunctionInstance.verifyNames(theName.value, Array.from(getNames));
+  }
+  else {
+    counterLabel.innerHTML = greetingsFunctionInstance.numberOfPeopleGreeted();
+    greetingsFunctionInstance.alreadyGreeted(theName.value, Array.from(getNames));
+  }
+}
+
+var pageRefreshedNames = function () {
+  if (JSON.parse(localStorage.getItem("namesGreeted")) === null) {
+    namesGreeted = []
+  }
+  else {
+    namesGreeted = JSON.parse(localStorage.getItem("namesGreeted"))
+    greetingsFactoryFunction(namesGreeted);
+  }
+}
+
 var theLanguageChosen = function(){
   let languageArray = Array.from(languageLabels);
   for (let i = 0; i < languageArray.length; i++) {
@@ -25,22 +47,30 @@ var theLanguageChosen = function(){
 }
 
 var greetBtnClicked = function () {
-
+  var getNames =JSON.parse(localStorage.getItem("namesGreeted"));
   if (languageChosen === undefined || languageChosen === "") {
-    greetLabel.innerHTML = greetingsFunctionInstance.errorMessageLanguage()
+    greetLabel.innerHTML = greetingsFunctionInstance.errorMessageLanguage();
   }
+  else if(greetingsFunctionInstance.alreadyGreeted(theName.value, Array.from(getNames))=== true){
+   return greetLabel.innerHTML = greetingsFunctionInstance.alreadyGreeted((theName.value, Array.from(getNames)));
+  }
+
   else {
     greetLabel.innerHTML = greetingsFunctionInstance.greetLanguage(String(languageChosen), String(theName.value));
-    greetingsFunctionInstance.verifyNames(String(theName.value))
+   return greetingsFunctionInstance.verifyNames(theName.value, Array.from(getNames));
   };
 
 };
 greetbtn.onclick = function () {
-  storeNames();
   theLanguageChosen();
+  storeNames();
+  pageRefreshedCount();
+  pageRefreshedNames();
   greetBtnClicked();
   clearGreetInput();
   namesCounter();
+  
+  
 
 }
 
