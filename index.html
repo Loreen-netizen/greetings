@@ -2,27 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>greetingsTests</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="greet.css">
 </head>
 <body>
-    <div id="mocha"></div>
-    <script>
-        mocha.setup('bdd');
-        var assert = chai.assert;
-    </script>
 
-<script src="./greetings.tests.js" charset="utf-8"></script>
-<script src="./dom2greetingsFactoryFunction.js" charset="utf-8"></script>
+   <div class="container1">
 
-<script>
-  mocha.checkLeaks();
-  mocha.run();
-</script>
-   
+    <div class="inputDiv">
+        <input id = "theInputTag" placeholder="type your name" class="inputTag"> </input>
+    </div>
+
+   <div class="buttonDiv">
+    <button id = "greetbtn" class="buttonTag" > greet me</button>
+   </div>
+
+   <div class="labelDivs"> 
+    <label id = "theGreetLabel" class="inputTag"> Welcome!  </label>
+</div>
+    <div class="labelDivs"> 
+
+        <label id = "counterLabel" class="inputTag"> counter </label>
+
+        </div>
+
+   </div>
+   <div class = "resetCounterDiv">
+
+    <button class= "resetCounter" id="resetCounterButton" >Reset Counter</button>
+   </div>
+
+
+<div class="languageDivs">
+<label class="languageLabels">
+    English
+    <input type="radio" name="language" value="English">
+</label>
+
+
+<label class="languageLabels">
+    Shona
+    <input type="radio" name="language" value="Shona">
+</label>
+
+<label class="languageLabels" >
+    Ndebele
+    <input type="radio" name="language" value="Ndebele">
+</label>
+
+</div>
+    
+   </div>
+
+    
 </body>
+<!-- <script src="greet.js"></script> -->
+<script src="dom2greetingsFactoryFunction.js" charset="utf-8"></script>
+<script src="dom2greet.js" charset="utf-8"></script>
+
 </html>
