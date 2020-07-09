@@ -1,4 +1,4 @@
-var theName = document.getElementById("theInputTag")
+var theName = document.getElementById("userName")
 var greetbtn = document.getElementById("greetbtn");
 var greetLabel = document.getElementById("theGreetLabel")
 var counterLabel = document.getElementById("counterLabel")
@@ -51,10 +51,12 @@ var clearLocalStorage = function () {
   location.reload();
 }
 
-window.setTimeout('onload', function () {
-  greetLabel.innerHTML = greetingsFunctionInstance.errorMessageUserName(theName.value)
-  greetLabel.innerHTML = greetingsFunctionInstance.greetLanguage(theName.value, lang)
-}, 500)
+// setTimeout(function(){
+//   // var checkedRadioBtn = document.querySelector("input[name='language']:checked");
+//   // var lang = checkedRadioBtn.value
+//   greetLabel.innerHTML = greetingsFunctionInstance.errorMessageUserName(theName.value)
+//   greetLabel.innerHTML = greetingsFunctionInstance.errorMessageLanguage( lang)
+// }, 5000);
 
 resetCounter.addEventListener('click', clearLocalStorage)
 greetbtn.addEventListener('click', greetBtnClicked);

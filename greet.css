@@ -16,14 +16,17 @@
             
         }
         
+
         .labelDiv{
-             padding-left:15em;
-             margin-left: 9em;
+            margin: 5em;
+            padding: 2em;
+            justify-content: center;
             display:flex;
-            width:25%;
-            background-color: rgb(228, 215, 209);
-            border: lightgrey solid 1px;
+            width: 40%;
+            justify-self: center;
+            background-color: rgb(228, 215, 209);border: lightgrey solid 1px;
         }
+
 
 #counterLabel{
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
