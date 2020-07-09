@@ -51,13 +51,12 @@ var clearLocalStorage = function () {
   location.reload();
 }
 
-// setTimeout(function(){
-//   // var checkedRadioBtn = document.querySelector("input[name='language']:checked");
-//   // var lang = checkedRadioBtn.value
-//   greetLabel.innerHTML = greetingsFunctionInstance.errorMessageUserName(theName.value)
-//   greetLabel.innerHTML = greetingsFunctionInstance.errorMessageLanguage( lang)
-// }, 5000);
+var resetGreet = function (){setTimeout(function(){
+  greetLabel.innerHTML = "Welcome!"
+}, 3000);}
+
 
 resetCounter.addEventListener('click', clearLocalStorage)
 greetbtn.addEventListener('click', greetBtnClicked);
 greetbtn.addEventListener("click", clearGreetInput);
+greetbtn.addEventListener("click", resetGreet);
