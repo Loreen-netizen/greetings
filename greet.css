@@ -7,84 +7,86 @@
   
 }
 
-.inputTag{
+#theGreetLabel{
+  
+        margin:2em;
+         font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+            font-size:x-large;
+            font-weight: 300;
+            
+        }
+        
+        .labelDiv{
+             padding-left:15em;
+             margin-left: 9em;
+            display:flex;
+            width:25%;
+            background-color: rgb(228, 215, 209);
+            border: lightgrey solid 1px;
+        }
+
+#counterLabel{
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-    font-size: large;
-    font-weight: 200;
+    font-size:xx-large;
+    font-weight: 400;
+    padding-left: 13em;
+    margin:1em;
+
+}
+.counterDiv{
+display: flex;
+}
+
+#userName{
+    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size:x-large;
+    font-weight: 300;
+    padding-left: 9em;
+    margin:1em;
     
 }
 
 .inputDiv{
-    padding: 2%;
-    margin-right: 1em;
-    border: 1px groove rgb(236, 234, 234);
-     flex : 2;
-    background-color: rgb(223, 183, 195);
+display:flex;
+padding-left: 11em;
 }
 
+.languageDiv{
+    display:flex;
+    flex:1;
+    margin-left:18em;
+    padding:1em;
+        font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+        font-size: large;
+        font-weight: 200;
+    }
 
-#greetbtn{
-    
-    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-    font-size: large;
-    font-weight: 200;
-    
-}
-
-.buttonDiv{
-    padding: 2%;
-    margin-left: 1em;
-    border: 1px groove rgb(238, 234, 234);
-     flex : 1;
-    background-color: rgb(228, 215, 209);
-}
-
-.labelDivs{
-    padding: 2%;
-    margin-left: 1em;
-    border: 1px groove rgb(238, 234, 234);
-     flex : 1;
-    background-color: rgb(228, 215, 209);   
-}
-
-.languageDivs{
-    display: flex;
-    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-    font-size: large;
-    font-weight: 200;
-    width: 50%;
-}
-
-.languageLabels{
-/* flex-basis: 100%; */
-margin: auto;
-padding: 2em;
-border: groove 0 rgb(238, 228, 219);
-}
-.resetCounterDiv{
+.buttonTag{
     padding: 2em;
-    display: flex;
-    width: 45%;
-
-}
-
-.resetCounter{
-
-    margin: auto;
-padding: 2em;
-border: groove 0 rgb(238, 228, 219);
-font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-
+ background-color: rgb(228, 215, 209);
+  font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
     font-size: large;
     font-weight: 200;
-
 }
+
+.buttons{
+     display:flex;
+    padding: 5%;
+    margin-left: 14em;
+}
+
+#resetCounterButton{
+    margin-left:1em;
+}
+
+
+
 
 
 /* ==================================MEDIA QUEIRIES================================================= */
 
 @media(max-width:650px){
-    .container1{
+    .main{
       display: inline-block;
       width: auto;
     }
@@ -92,94 +94,68 @@ font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
 }
 
 @media(max-width:650px){
-    .inputDiv{
-        padding: 5px;
-        margin: auto;
-        border: 1px groove rgb(236, 234, 234);
-        background-color: rgb(223, 183, 195);
-    }
-}
-@media(max-width:650px){
-    .buttonDiv{
-        padding: 5%;
-        margin: auto;
-        border: none;
-        background-color: white;
-    }
-}
-
-@media(max-width:650px){
-    .labelDivs{
-        padding: 5%;
-        margin: auto;
-        border: none;
-        background-color: white;  
-    }
-}
-
-@media(max-width:655px){
-    .greetLabelDiv{ 
-        font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-        font-size: x-large;
-        font-weight: 300;
-        padding: 0;
-        border: 1px groove rgb(236, 234, 234);
-        background-color: rgb(252, 252, 252);
-       
-
-        
-    }
-}
-
-/* @media(max-width:830px){
-    #greetbtn{
-    
-        font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-        font-size: x-large;
-        font-weight: 300;
-        padding: 0;
-        margin-left: 30%;
-       
-    }
-} */
-
-@media(max-width:650px){
-
-.languageDivs{
-    padding-top: 0.2em;
-    flex-direction: column;
+   
+        #userName{
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-    font-size: x-large;
+    font-size:x-large;
     font-weight: 300;
+   padding:0;
+   margin:auto;
+    
+    
+}
+       
+    }
+    @media(max-width:650px){
+   
+       .inputDiv{
 
+  padding-left: 0;
 }
-}
-@media(max-width:650px){
-    
-    .languageLabels{
-    margin: 0;
-    padding: 0.5em;
-    border: groove 0 rgb(238, 228, 219);
-    }
-    
+       
     }
 
-    @media(max-width: 450px){
-    .resetCounterDiv{
-        padding: 0;
-        display: inline-block;
-        width: auto;
+
+
+    @media(max-width:650px){
+        .labelDiv{
+          display:inline-block;
+            padding: 0;
+            margin: auto;
+            border: none;
+            background-color: white;  
+        }
+    }
+
+
+@media(max-width:650px){
+    #counterLabel{
+ font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
+    font-size:xx-large;
+    font-weight: 400;
+   padding:1em;
+    margin:auto;
     
     }
 }
+
+
+
 @media(max-width:650px){
-    .resetCounter{
-    
-        margin: auto;
-    padding: 1em;
-    border: groove 0 rgb(238, 228, 219);
-    font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-        font-size: large;
-        font-weight: 300;
-    }
+
+.languageDiv{
+    display: column;
+    padding-left: 4em;
+     margin: 2em;
+   
+}
+}
+
+  
+@media(max-width:650px){
+   .buttons{
+     display:column;
+    padding: 0;
+    margin:auto;
+}
 }
