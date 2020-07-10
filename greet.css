@@ -31,8 +31,8 @@
 #counterLabel{
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
     font-size:xx-large;
-    font-weight: 400;
-    padding-left: 13em;
+    font-weight: 200;
+    padding-left: 10em;
     margin:1em;
 
 }
@@ -143,8 +143,8 @@ padding-left: 11em;
 @media(max-width:650px){
     #counterLabel{
  font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
-    font-size:xx-large;
-    font-weight: 400;
+    font-size:x-large;
+    font-weight: 200;
    padding:1em;
     margin:auto;
     

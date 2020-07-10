@@ -14,7 +14,7 @@ var greetingsFunctionInstance = greetingsFactoryFunction(getNames);
 
 
 window.onload = function () {
-  counterLabel.innerHTML = greetingsFunctionInstance.numberOfPeopleGreeted()
+  counterLabel.innerHTML = greetingsFunctionInstance.numberOfPeopleGreeted() + " people greeted!";
 
 };
 
@@ -26,7 +26,7 @@ var  nameStr = String(theName.value);
   if (checkedRadioBtn && theName.value !== "") {
     var lang = checkedRadioBtn.value
     greetingsFunctionInstance.verifyNames(nameStr)
-    counterLabel.innerHTML = greetingsFunctionInstance.numberOfPeopleGreeted()
+    counterLabel.innerHTML = greetingsFunctionInstance.numberOfPeopleGreeted() + " people greeted!";
 
     localStorage.setItem("namesGreeted", JSON.stringify(greetingsFunctionInstance.getName()));
 
@@ -51,9 +51,11 @@ var clearLocalStorage = function () {
   location.reload();
 }
 
-var resetGreet = function (){setTimeout(function(){
-  greetLabel.innerHTML = "Welcome!"
-}, 3000);}
+var resetGreet = function(){
+  setTimeout(function(){
+    greetLabel.innerHTML = "Welcome!"
+  },3000);
+}
 
 
 resetCounter.addEventListener('click', clearLocalStorage)
