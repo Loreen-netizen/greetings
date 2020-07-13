@@ -21,7 +21,7 @@
             padding: 2em;
             justify-content: center;
             display:flex;
-            width: 25%;
+            width: 14%;
             justify-self: center;
             background-color: rgb(228, 215, 209);border: lightgrey solid 1px;
         }
@@ -42,7 +42,6 @@ display: flex;
     font-family:  Ubuntu, 'Helvetica Neue', sans-serif ;
     font-size:large;
     font-weight: 250;
-    padding-left: 9em;
     margin:1em;
     
     
@@ -100,6 +99,7 @@ display:flex;
     font-weight: 300;
    padding:0;
    margin:auto;
+   width:50%;
     
     
 }
@@ -119,19 +119,18 @@ display:flex;
             background-color: white;
             padding:0;
             border: none; 
-            width: 100%;
+            background-color: rgb(228, 215, 209);border: lightgrey solid 1px;
            
         }
     }
 
     @media(max-width:650px){
         .labelDiv{
-         text-align: center;
-            padding: 0;
+            text-align: center;
+            padding: 1em;
             margin: auto;
             border: none;
-            background-color: white; 
-            width: 100%; 
+             background-color: rgb(228, 215, 209);border: lightgrey solid 1px;
         }
     }
 
@@ -153,7 +152,6 @@ display:flex;
 
 .languageDiv{
     display: column;
-    padding-left: 4em;
      margin: 2em;
    
 }
@@ -164,6 +162,6 @@ display:flex;
    .buttons{
      display:column;
     padding: 0;
-    margin:auto;
+    margin:3em;
 }
 }
